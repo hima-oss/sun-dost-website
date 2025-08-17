@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Sun Dost's Awesome Site</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      min-height: 100vh;
+      background: linear-gradient(270deg, #2193b0, #6dd5ed, #f7797d);
+      background-size: 600% 600%;
+      animation: bgAnimation 15s ease infinite;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      font-family: 'Segoe UI', sans-serif;
+      padding: 30px 15px;
+    }
+
+    @keyframes bgAnimation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card {
+      background-color: white;
+      padding: 40px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 15px 30px rgba(0,0,0,0.3);
+      animation: fadeIn 1.5s ease;
+      max-width: 90%;
+      width: 420px;
+      transition: transform 0.3s ease;
+      margin-bottom: 30px;
+    }
+
+    .card:hover {
+      transform: perspective(600px) rotateX(5deg) rotateY(5deg) scale(1.02);
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    h1 {
+      font-size: 28px;
+      color: #333;
+      margin-bottom: 10px;
+    }
+
+    p {
+      font-size: 16px;
+      color: #555;
+      margin-bottom: 20px;
+    }
+
+    button {
+      padding: 12px 25px;
+      font-size: 16px;
+      background: linear-gradient(135deg, #2196f3, #21cbf3);
+      color: white;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: 0.3s ease;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #1976d2, #00bcd4);
+      transform: scale(1.08);
+    }
+
+    footer {
+      margin-top: 20px;
+      font-size: 12px;
+      color: #aaa;
+    }
+
+    /* extra section */
+    .content {
+      background: rgba(255, 255, 255, 0.9);
+      padding: 30px;
+      border-radius: 20px;
+      max-width: 800px;
+      line-height: 1.6;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+      animation: fadeIn 2s ease;
+    }
+
+    .content h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #222;
+    }
+
+    .content ul {
+      margin-left: 20px;
+    }
+
+    .content ul li {
+      margin-bottom: 10px;
+    }
+
+    @media (max-width: 500px) {
+      h1 {
+        font-size: 22px;
+      }
+      p, button {
+        font-size: 14px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Welcome to Sun Dost's World 🌍</h1>
+    <p>This is a modern, mobile-friendly test website made with pure HTML, CSS & JS.</p>
+    <button onclick="showMsg()">Click Me</button>
+    <footer>Made with ❤️ by Sun Dost | <span id="year"></span></footer>
+  </div>
+
+  <!-- New Content Section -->
+  <div class="content">
+    <h2>🌟 Success in Life – एक नई सोच</h2>
+    <p>हर इंसान अपनी ज़िंदगी में सफल होना चाहता है, लेकिन सफलता सिर्फ़ किस्मत से नहीं मिलती। इसके लिए ज़रूरी है मेहनत, लगन और सही सोच।</p>
+    <ul>
+      <li>👉 <b>Positive सोचना सीखो</b> – जैसा सोचोगे, वैसा ही पाओगे।</li>
+      <li>👉 <b>Hard Work</b> – मेहनत से हर सपना सच हो सकता है।</li>
+      <li>👉 <b>Failure से मत डरो</b> – असफलता हमें सिखाती है कि अगली बार और बेहतर कैसे करना है।</li>
+      <li>👉 <b>Consistency रखो</b> – रोज़ थोड़ा-थोड़ा काम करना भी बड़ी मंज़िल तक ले जाता है।</li>
+      <li>👉 <b>अपने Passion को Follow करो</b> – जो काम दिल से अच्छा लगे, वही करो।</li>
+    </ul>
+    <p style="margin-top:20px; text-align:center;">✨ याद रखो, Success एक Journey है, Destination नहीं।</p>
+  </div>
+
+  <script>
+    const quotes = [
+      "🔥 Keep Learning, Keep Shining!",
+      "🚀 Success starts with small steps!",
+      "💡 Every day is a new chance to grow!",
+      "🏆 Work hard, dream big!",
+      "🌟 Believe in yourself, dost!"
+    ];
+
+    function showMsg() {
+      const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
+      alert(randomQuote);
+    }
+
+    // auto year in footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
